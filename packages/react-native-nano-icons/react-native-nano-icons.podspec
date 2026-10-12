@@ -18,4 +18,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   install_modules_dependencies(s)
+
+  # Inline baseline correction uses RCTAttributedTextUtils from FabricComponents.
+  add_dependency(s, "React-FabricComponents",
+    :additional_framework_paths => ["react/renderer/textlayoutmanager/platform/ios"])
 end
